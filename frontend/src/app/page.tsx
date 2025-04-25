@@ -2,102 +2,145 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="sidebar">
+        <div className="sidebar-logo">
+          <h4>Early Stage Recruiter</h4>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <ul className="sidebar-menu">
+            <li><a href="index.html" className="active"><i className="bi bi-grid"></i> Dashboard</a></li>
+            <li><a href="search.html"><i className="bi bi-search"></i> Candidate Search</a></li>
+            <li><a href="inbox.html"><i className="bi bi-inbox"></i> Inbox</a></li>
+            <li><a href="#"><i className="bi bi-person"></i> Profile</a></li>
+            <li><a href="#"><i className="bi bi-gear"></i> Settings</a></li>
+        </ul>
+      </div>
+
+      <div className="content">
+        <div className="container-fluid">
+            <div className="d-flex justify-content-between align-items-center mb-4">
+                <h2>Dashboard</h2>
+                <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newSearchModal">
+                    <i className="bi bi-plus"></i> New Search
+                </button>
+            </div>
+
+            <div className="row mb-4">
+                <div className="col-md-3">
+                    <div className="card p-3">
+                        <div className="d-flex align-items-center mb-2">
+                            <div className="icon-box bg-light-primary me-2 p-2 rounded">
+                                <i className="bi bi-search text-primary"></i>
+                            </div>
+                            <h6 className="mb-0">Active Searches</h6>
+                        </div>
+                        <h3>12</h3>
+                    </div>
+                </div>
+                <div className="col-md-3">
+                    <div className="card p-3">
+                        <div className="d-flex align-items-center mb-2">
+                            <div className="icon-box bg-light-success me-2 p-2 rounded">
+                                <i className="bi bi-person-check text-success"></i>
+                            </div>
+                            <h6 className="mb-0">Candidates</h6>
+                        </div>
+                        <h3>247</h3>
+                    </div>
+                </div>
+                <div className="col-md-3">
+                    <div className="card p-3">
+                        <div className="d-flex align-items-center mb-2">
+                            <div className="icon-box bg-light-warning me-2 p-2 rounded">
+                                <i className="bi bi-inbox text-warning"></i>
+                            </div>
+                            <h6 className="mb-0">New Messages</h6>
+                        </div>
+                        <h3>18</h3>
+                    </div>
+                </div>
+                <div className="col-md-3">
+                    <div className="card p-3">
+                        <div className="d-flex align-items-center mb-2">
+                            <div className="icon-box bg-light-info me-2 p-2 rounded">
+                                <i className="bi bi-check-circle text-info"></i>
+                            </div>
+                            <h6 className="mb-0">Hired</h6>
+                        </div>
+                        <h3>32</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div className="card mb-4">
+                <div className="card-header bg-white">
+                    <h5 className="mb-0">Recent Searches</h5>
+                </div>
+                <div className="card-body">
+                    <div className="table-responsive">
+                        <table className="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Position</th>
+                                    <th>Created</th>
+                                    <th>Status</th>
+                                    <th>Candidates</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Frontend Developer Intern</td>
+                                    <td>Oct 15, 2023</td>
+                                    <td><span className="badge bg-success">Active</span></td>
+                                    <td>42</td>
+                                    <td>
+                                        <a href="search.html" className="btn btn-sm btn-outline-primary">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UX/UI Design Intern</td>
+                                    <td>Oct 12, 2023</td>
+                                    <td><span className="badge bg-success">Active</span></td>
+                                    <td>28</td>
+                                    <td>
+                                        <a href="search.html" className="btn btn-sm btn-outline-primary">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Data Science Co-op</td>
+                                    <td>Oct 5, 2023</td>
+                                    <td><span className="badge bg-success">Active</span></td>
+                                    <td>36</td>
+                                    <td>
+                                        <a href="search.html" className="btn btn-sm btn-outline-primary">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Backend Engineer Intern</td>
+                                    <td>Sep 28, 2023</td>
+                                    <td><span className="badge bg-warning">Closing</span></td>
+                                    <td>53</td>
+                                    <td>
+                                        <a href="search.html" className="btn btn-sm btn-outline-primary">View</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Product Manager Intern</td>
+                                    <td>Sep 20, 2023</td>
+                                    <td><span className="badge bg-secondary">Closed</span></td>
+                                    <td>31</td>
+                                    <td>
+                                        <a href="search.html" className="btn btn-sm btn-outline-primary">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    </>
   );
 }

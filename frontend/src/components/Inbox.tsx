@@ -47,8 +47,16 @@ const messagesList: Message[] = [
 ];
 
 export default function Inbox() {
-  const [messages, setMessages] = useState<Message[]>(messagesList);
+  //const [messages, setMessages] = useState<Message[]>(messagesList);
+
+  const messages = messagesList;
   const [selectedMessage, setSelectedMessage] = useState<Message>(messages[0]);
+
+  //const handleLoad = (messages: Message[]) => {
+  //  setMessages(messages);
+  //}
+
+  
 
   const handleMessageClick = (message: Message) => {
     setSelectedMessage(message);

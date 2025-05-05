@@ -1,0 +1,35 @@
+{
+  "// Frontend Prompts": {},
+  
+  "Code Review - Frontend": {
+    "prompt": "Please review this code for bugs, performance issues, and adherence to best practices in Next.js and React.",
+    "shortcut": "alt+shift+r"
+  },
+  "Generate React Component": {
+    "prompt": "Generate a React component for a {{feature}} with the following requirements: {{requirements}}",
+    "shortcut": "alt+shift+g"
+  },
+  
+  "// General Purpose Prompts": {},
+  
+  "Debug Helper": {
+    "prompt": "Help me debug this error: {{error}}",
+    "shortcut": "alt+shift+d"
+  },
+  "Optimize Code": {
+    "prompt": "Optimize this code for better performance while maintaining the same functionality.",
+    "shortcut": "alt+shift+o"
+  },
+  "Add Types": {
+    "prompt": "Add TypeScript types to this code to make it strongly typed.",
+    "shortcut": "alt+shift+t"
+  },
+  "Generate Tests": {
+    "prompt": "Generate comprehensive test cases for this code using the appropriate testing framework.",
+    "shortcut": "alt+shift+j"
+  },
+  "Document Code": {
+    "prompt": "Add clear documentation comments to this code following standard documentation practices.",
+    "shortcut": "alt+shift+k"
+  }
+} 
